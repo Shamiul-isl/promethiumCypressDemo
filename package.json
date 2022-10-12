@@ -1,0 +1,31 @@
+{
+  "name": "promethiumTechnical",
+  "version": "1.0.0",
+  "description": "Interview Challenge for Promethium AI",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "npx cypress run --browser chrome",
+    "test:edge": "npx cypress run --browser edge",
+    "test:firefox": "npx cypress run --browser firefox",
+    "test:merge-report": "./node_modules/.bin/mochawesome-merge results/*.json > results/test_results.json && rm -rf results/mochawesome_*",
+    "test:html-report": "npx marge -o results --cdn results/test_results.json",
+    "cy:verify": "npx cypress verify",
+    "cy:info": "npx cypress info",
+    "cy:version": "npx cypress version",
+    "cy:cache:path": "npx cypress cache path",
+    "cy:cache:list": "npx cypress cache list"
+  },
+  "author": "Shamiul Islam",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.1.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "path": "^0.12.7",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-grep": "^3.0.3"
+  }
+}
