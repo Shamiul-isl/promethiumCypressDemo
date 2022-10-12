@@ -25,7 +25,9 @@ describe('Registering new user tests', () => {
     it('Should be able to sign up with valid credentials', { tags: ['TestCase2', '@required'] }, () => {
         HeaderComponent.clickOnTryNow();
         cy.origin(SignUpPage.url, {args: {SignUpPage}}, ({SignUpPage}) => {
+            // randomly generated string for company name for successful registration
             let r = (Math.random() + 1).toString(36).substring(7);
+            
             cy.fixture('sign-up-valid-data').then((data) => {
                 cy.get(SignUpPage.emailField).type(data.emailField+r+".com");
                 cy.get(SignUpPage.firstName).type(data.firstName);
