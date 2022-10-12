@@ -16,6 +16,9 @@ describe('Resources page tests', () => {
         ResourcesPage.downloadSolutionsForDbtFile()
         cy.task("readPdf", "cypress/downloads/dbtSolutions.pdf").then(({text, numpages}) => {
             expect(text).to.contain("Reimagining data analytics")
+            expect(text).to.contain("Why Promethium + dbt")
+            expect(text).to.contain("From Traditional to Modern In Days, Not Years")
+            expect(text).to.contain("Learn more, try for yourself, visit promethium.ai")
             expect(numpages).to.equal(4)
         })
     });
